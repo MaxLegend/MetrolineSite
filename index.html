@@ -383,7 +383,41 @@
     color: var(--paper-bg);
     border-color: var(--ink);
 }
+/* Контейнер для строки с кнопкой */
+.jvm-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
 
+/* Стиль мини-кнопки внутри списка */
+.jvm-inline-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(214, 48, 49, 0.1);
+    border: 1px solid rgba(214, 48, 49, 0.3);
+    color: var(--metro-red);
+    text-decoration: none;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    margin-left: auto; /* Прижимает кнопку к правому краю блока */
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.jvm-inline-link:hover {
+    background: var(--metro-red);
+    color: white;
+    box-shadow: 0 0 10px rgba(214, 48, 49, 0.3);
+}
+
+.icon-svg-mini {
+    width: 12px;
+    height: 12px;
+}
 /* Эффект при наведении */
 .lang-link:hover:not(.active) {
     background: var(--metro-red);
@@ -418,7 +452,7 @@
     <a href="index_en.html" class="lang-link">EN</a>
 </div>
 <div class="content-panel">
-    <p class="tagline"># SYSTEM.RUN(METROLINE.EXE)</p>
+    <p class="tagline"># SYSTEM.RUN(METROLINE.JAR)</p>
     <h1>Metroline</h1>
     
     <p class="description">
@@ -426,14 +460,28 @@
     </p>
 
     <div class="features-list">
-        <div class="feature-item"><span class="line-num">01</span><span><span class="keyword">Написан на:</span> <span class="string">Java</span></span></div>
+        <div class="feature-item jvm">
+    <span class="line-num">01</span>
+    <span>
+        <span class="keyword">Написан на:</span> 
+        <span class="string">Java. Не забудь скачать:</span>
+    </span>
+    <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank" class="jvm-inline-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" class="icon-svg-mini">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Установить JVM
+    </a>
+</div>
         <div class="feature-item"><span class="line-num">02</span><span><span class="keyword">Полностью бесплатна:</span> <span class="string">GNU GPL v.3</span></span></div>
         <div class="feature-item"><span class="line-num">03</span><span><span class="keyword">Код:</span> <span class="string">Проект с открытым исходным кодом</span></span></div>
         <div class="feature-item"><span class="line-num">04</span><span><span class="keyword">Возможности:</span> <span class="string">Архитектура кода, удобная для модификации</span></span></div>
      <div class="feature-item"><span class="line-num">05</span><span><span class="keyword">Экспорт:</span> <span class="string">Сохранение в PNG разрешением до 16к</span></span></div>
-   
+    
     </div>
-<a href="#" class="link-item copy-btn download-link">
+<a href="https://github.com/MaxLegend/Metroline/releases/tag/release" class="link-item copy-btn download-link">
     СКАЧАТЬ METROLINE
 </a>
 
